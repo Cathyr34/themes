@@ -95,11 +95,11 @@ get_header();
             </div>
         </section>
 
+       
+        <section id="oscar">    
         <img class="sunflower fleur" src = "foce-child/images_koukaki/Sunflower.png" alt="Sunflower">
         <img class="orchidee fleur" src = "foce-child/images_koukaki/orchid.png" alt="orchidee">
         
-        <section id="oscar">    
-
             <div class= "fade-in-section">
                 <h3>Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</h3>
                 <img src = "wp-content/themes/foce-child/images_koukaki/oscar.png" alt="oscar des films animation">
