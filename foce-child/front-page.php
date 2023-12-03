@@ -1,33 +1,4 @@
-<head>
-    
-    <style>
-        .fade-in-section {
-            opacity: 0;
-            transition: opacity 2s;
-        }
-    </style>
-  
-  <link rel="stylesheet" type="text/css" href="styles.css">
 
-</head>
-<body>
-
-<script>
-    window.addEventListener('scroll', function() {
-        var sections = document.querySelectorAll('.fade-in-section');
-        sections.forEach(function(section) {
-            var sectionTop = section.getBoundingClientRect().top;
-            var screenPosition = window.innerHeight / 1.3;
-            if(sectionTop < screenPosition) {
-                section.style.opacity = '1';
-            } else {
-                section.style.opacity = '0';
-            }
-        });
-    });
-</script>
-
-</body>
 <?php
 
 get_header();
@@ -35,13 +6,11 @@ get_header();
 
     <main id="primary" class="site-main">
        
-        <section class="banner">
-            <img src="<?php echo get_stylesheet_directory_uri(); ?>">
-            
+        <section class="banner">           
             <video class="source" id='myVideo' autoplay muted loop>
-                <source src="foce-child/Studio+Koukaki-vidéo+header+sans+son+(1).mp4" type="video/mp4">
+                <source src="<?php echo get_stylesheet_directory_uri(); ?>/Studio+Koukaki-vidéo+header+sans+son+(1).mp4" type="video/mp4">
             </video>
-            <img class="logovideo" src="foce-child/images_koukaki/logo.png" alt="logo Fleurs d'oranger & chats errants">
+            <img class="logovideo" src="<?php echo get_stylesheet_directory_uri(); ?>/images_koukaki/logo.png" alt="logo Fleurs d'oranger & chats errants">
         </section>
 
         <section class="story fade-in-section">
@@ -62,32 +31,42 @@ get_header();
             ?>
 
             <article id="characters">
-                <div class="main-character fade-in-section">
-                    <h3>Les personnages</h3>   
+                <div class="fade-in-section">
+                    <h3>Les personnages</h3>       
                     
-                <div id="slider">
-                    <script src="foce-child/customizer.js"></script>
-                    <?php
-                    while ( $characters_query->have_posts() ) {
-                        $characters_query->the_post();
-                        echo '<div class="slide">';
-                        echo get_the_post_thumbnail( get_the_ID(), array(300, 300) );
-                        echo '<div class="slide caption">';
-                        the_title();
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                    ?>
+                <div class="slider">
+                <div class="slide">
+                    <img class="slider" src="wp-content/themes/foce-child/images_koukaki/Kawaneko.png" alt="Kawaneko">
+                    <div class="caption">Kawaneko</div>
+                </div>
+                <div class="slide">
+                    <img src="wp-content/themes/foce-child/images_koukaki/Orenjiiro-1.png" alt="Orenjiiro-1">
+                    <div class="caption">Orenjiiro-1</div>
+                </div>
+                <div class="slide">
+                    <img src="wp-content/themes/foce-child/images_koukaki/Pinku-1.png" alt="Pinku-1">
+                    <div class="caption">Pinku-1</div>
+                </div>
+                <div class="slide">
+                    <img src="wp-content/themes/foce-child/images_koukaki/Tenshi-1.png" alt="Tenshi-1">
+                    <div class="caption">Tenshi-1</div>
+                </div>
+                <div class="slide">
+                    <img src="wp-content/themes/foce-child/images_koukaki/Jaakuna-1.png" alt="Jaakuna-1">
+                    <div class="caption">Jaakuna-1</div>
+                </div>
                 </div></div>
                 
             </article>
+
             <section id="place">
                 <div class= "fade-in-section">
                     <h3>Le Lieu</h3>
                     <p><?php echo get_theme_mod('place'); ?></p>
-                    <div class="container">
-                    <img class="nuages move" src="foce-child/images_koukaki/big_cloud.png" alt= "gros nuage">
-                    <img class="nuages move" src="foce-child/images_koukaki/little_cloud.png" alt= "petit nuage">
+                    <div class="box">
+                    <img class="nuages gros move" src="wp-content/themes/foce-child/images_koukaki/big_cloud.png" alt= "gros nuage">
+                    
+                    <img class="nuages petit move" src="wp-content/themes/foce-child/images_koukaki/little_cloud.png" alt= "petit nuage">
                     </div>
    
                 </div>

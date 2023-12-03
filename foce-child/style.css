@@ -5,7 +5,7 @@
  Author: Studio Koukaki
  Author URI: https://www.koukaki.local
  Template: foce
- Description: *** Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
 .oscar {
@@ -46,11 +46,11 @@
 }
 
 .orange {
-  text-shadow: 0 0 40px #FF5C00, 0 0 50px #FF5C00;
+  text-shadow: 0 0 80px #FF5C00, 0 0 80px #FF5C00;
 }
 
 h3 {
-  background-image: url("foce-child/images_koukaki/orange_characters_bg.png");
+  background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/orange_characters_bg.png");
 }
 
 @keyframes rotation {
@@ -79,69 +79,79 @@ h3 {
 .site-footer ul {
   padding-top: 18em;
 }
-
+/*
+.fade-in-section {
+  opacity: 0;
+  transition: opacity 2s;
+}
+*/
 .banner {
-  background-image: url("images_koukaki/banner.png");
+  background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
   min-height: 806px;
   background-size: cover;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
 }
 
 .source {
   width: 100%;
+  height: 100%;
 }
+
+.banner.source {
+	margin-top: -10%;
+	width: 50%;
+}
+
 
 .logovideo {
   position: absolute;
 }
 
-#slider {
-  position: relative;
+.slider {
+  display: flex;
+  overflow: auto;
+  width: calc(300 * 3); 
+}
+
+.slider .slide {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.slider img {
   width: 100%;
-  height: 380px;
-  white-space: nowrap; /* défilement horizontal */
+  height: auto;
 }
 
-.slide {
-  position: relative;
-  width: 30%;
-  height: 380px;
-  display: inline-block; /* défilement horizontal */
+.slider .caption {
+  text-align: center;
 }
-
-.slide.showing {
-  display: block; /* montre le slide actif */
-}
-
-.caption {
-  position: relative; /* le texte suit l'image */
-  bottom: 0;
-  width: 40%;
-  height: 50px;
-  margin-right: 70px;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  padding: 10px;
-}
-
 #place {
   background-image: url("foce-child/images_koukaki/Studio_Koukaki-image_place.png");
 }
 
-.nuages {
+.gros {
+  position: absolute;
+  top: 0;
+  right : 0;
+  z-index: 2;
+}
+  
+.petit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   z-index: 2;
 }
 
-.container {
+#place .box{
   position: relative;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.move {
-  position: relative;
-  animation: moveLeft 2s linear infinite;
+.box {
+  width: 550px;
+  height: 240px;
 }
 
 @keyframes moveLeft {
@@ -151,4 +161,4 @@ h3 {
   100% {
     transform: translateX(-300px);
   }
-}/*# sourceMappingURL=style.css.map */
+}

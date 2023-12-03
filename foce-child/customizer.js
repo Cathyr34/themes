@@ -17,6 +17,22 @@ $(document).ready(function() {
         .addTo(controller);  // Ajouter la scène au contrôleur
     });
 });
+
+
+window.addEventListener('scroll', function() {
+    var sections = document.querySelectorAll('.fade-in-section');
+    sections.forEach(function(section) {
+        var sectionTop = section.getBoundingClientRect().top;
+        var screenPosition = window.innerHeight / 1.3;
+        if(sectionTop < screenPosition) {
+            section.style.opacity = '1';
+        } else {
+            section.style.opacity = '0';
+        }
+    });
+});
+
+
 //vidéo
 document.addEventListener('DOMContentLoaded', function() {
     
@@ -28,31 +44,16 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 //slide
-var slides = document.querySelectorAll(".slide");
-var currentSlide = 0;
 
-// Ajoutez la classe 'showing' au premier slide
-slides[currentSlide].classList.add('showing');
+var slider = document.querySelector('.slider');
+var scrollAmount = 0;
 
-function nextSlide() {
-  // Retirez la classe 'showing' du slide actuel
-  slides[currentSlide].classList.remove('showing');
-
-  // Passez au slide suivant
-  currentSlide++;
-  if (currentSlide == slides.length) {
-    currentSlide = 0;
+// Faire défiler les images toutes les 2 secondes
+setInterval(function() {
+  scrollAmount += 300; // Largeur d'une image
+  if (scrollAmount >= slider.scrollWidth) {
+    scrollAmount = 0;
   }
+  slider.scrollTo(scrollAmount, 0);
+}, 2000);
 
-  // Ajoutez la classe 'showing' au nouveau slide actuel
-  slides[currentSlide].classList.add('showing');
-
-  // Déplacez le slider
-  document.querySelector(".slide").scrollLeft = slides[currentSlide].offsetLeft;
-
-  // Appellez nextSlide après un délai
-  setTimeout(nextSlide, 3000); 
-}
-
-// Commencez le défilement
-nextSlide();
