@@ -8,6 +8,28 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+
+/*fade-in*/
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-section {
+  animation-name : apparition;
+  animation-delay: 3s;
+  }
+
+
+/*oscar*/
+#oscar {
+  position: relative;
+}
+
 .oscar {
   /* 18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021 1 */
   position: absolute;
@@ -17,24 +39,6 @@
   top: 3677px;
   background: url(18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021.jpg);
   mix-blend-mode: darken;
-}
-
-@keyframes apparition {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.titre {
-  animation: 2s apparition;
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
-}
-
-#oscar {
-  position: relative;
 }
 
 #oscar > div {
@@ -61,6 +65,7 @@ h3 {
     transform: rotate(359deg);
   }
 }
+
 .site-footer::before, .site-footer::after, .site-footer ul::after {
   animation: rotation 2s linear infinite;
 }
@@ -79,17 +84,12 @@ h3 {
 .site-footer ul {
   padding-top: 18em;
 }
-/*
-.fade-in-section {
-  opacity: 0;
-  transition: opacity 2s;
-}
-*/
+
+/*bannière*/
 .banner {
   background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
   min-height: 806px;
   background-size: cover;
-  
 }
 
 .source {
@@ -102,31 +102,34 @@ h3 {
 	width: 50%;
 }
 
-
 .logovideo {
   position: absolute;
 }
 
+/*slider*/
 .slider {
   display: flex;
-  overflow: auto;
-  width: calc(300 * 3); 
+  max-width: 320px *3;
 }
 
 .slider .slide {
-  width: 300px;
+  overflow: hidden; 
   margin-right: 20px;
 }
 
 .slider img {
-  width: 100%;
+  
+  width: 300px;
   height: auto;
 }
 
 .slider .caption {
   text-align: center;
 }
+
+/*nuages*/
 #place {
+  position: relative;
   background-image: url("foce-child/images_koukaki/Studio_Koukaki-image_place.png");
 }
 
@@ -144,21 +147,53 @@ h3 {
   z-index: 2;
 }
 
-#place .box{
-  position: relative;
+#place .nuages {
+  position: absolute;
+  top: 80px;
+  right: 0;
   box-sizing: border-box;
+  animation: move 5s linear infinite;
 }
 
-.box {
+.nuages  {
   width: 550px;
   height: 240px;
 }
 
-@keyframes moveLeft {
+@keyframes move {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-300px);
   }
+}
+
+/*menu*/
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+  justify-items: right;
+}
+
+@media screen and (min-width: 1440px) {
+	.menu-toggle {
+		display: none;
+	}
+ 
+	.main-navigation ul {
+		display: flex;
+		margin: 0;
+		padding-left: 0;
+	}
+	.main-navigation ul .site-title {
+    
+		display: block;
+	}
 }

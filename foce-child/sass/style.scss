@@ -1,165 +1,199 @@
+@charset "UTF-8";
 /*!
  Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
  Theme URI: https://www.koukaki.local
  Author: Studio Koukaki
  Author URI: https://www.koukaki.local
  Template: foce
- Description: *** Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
- 
-.oscar {
-/* 18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021 1 */
 
-position: absolute;
-width: 278px;
-height: 129px;
-left: 930px;
-top: 3677px;
-
-background: url(18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021.jpg);
-mix-blend-mode: darken;
+/*fade-in*/
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-
-@keyframes apparition {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  
-  .titre {
-    animation: 2s apparition;
-    animation-delay: 2s;
-    animation-fill-mode: forwards;
+.fade-in-section {
+  animation-name : apparition;
+  animation-delay: 3s;
   }
 
-  #oscar {
-    position: relative;
-  }  
+
+/*oscar*/
+#oscar {
+  position: relative;
+}
+
+.oscar {
+  /* 18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021 1 */
+  position: absolute;
+  width: 278px;
+  height: 129px;
+  left: 930px;
+  top: 3677px;
+  background: url(18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021.jpg);
+  mix-blend-mode: darken;
+}
 
 #oscar > div {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	width: 80%;
-	
-	margin: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 100px;
 }
 
 .orange {
-  
-  text-shadow: 0 0 40px #FF5C00, 0 0 50px #FF5C00;
+  text-shadow: 0 0 80px #FF5C00, 0 0 80px #FF5C00;
 }
 
-h3{
-background-image: url("foce-child/images_koukaki/orange_characters_bg.png");
+h3 {
+  background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/orange_characters_bg.png");
 }
+
 @keyframes rotation {
-	from {
-	  transform: rotate(0deg);
-	}
-	to {
-	  transform: rotate(359deg);
-	}
+  from {
+    transform: rotate(0deg);
   }
-  
-  .site-footer::before, .site-footer::after, .site-footer ul::after {
-	animation: rotation 2s linear infinite;
-  } 
+  to {
+    transform: rotate(359deg);
+  }
+}
 
-  .site-footer::after {
-    top:0em;
-    bottom: auto;
-  }
-  .site-footer {
-    display: block;
-    padding-top: 0;
-    overflow: visible;
-  }
+.site-footer::before, .site-footer::after, .site-footer ul::after {
+  animation: rotation 2s linear infinite;
+}
 
-  .site-footer ul {
-    padding-top: 18em;
-  }
+.site-footer::after {
+  top: 0em;
+  bottom: auto;
+}
 
+.site-footer {
+  display: block;
+  padding-top: 0;
+  overflow: visible;
+}
+
+.site-footer ul {
+  padding-top: 18em;
+}
+
+/*bannière*/
 .banner {
-
-	background-image: url("images_koukaki/banner.png");
-	min-height: 806px;
-	background-size: cover;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
+  min-height: 806px;
+  background-size: cover;
 }
 
 .source {
   width: 100%;
+  height: 100%;
+}
+
+.banner.source {
+	margin-top: -10%;
+	width: 50%;
+}
+
+.logovideo {
+  position: absolute;
+}
+
+/*slider*/
+.slider {
+  display: flex;
+  max-width: 320px *3;
+}
+
+.slider .slide {
+  overflow: hidden; 
+  margin-right: 20px;
+}
+
+.slider img {
+  
+  width: 300px;
+  height: auto;
+}
+
+.slider .caption {
+  text-align: center;
+}
+
+/*nuages*/
+#place {
+  position: relative;
+  background-image: url("foce-child/images_koukaki/Studio_Koukaki-image_place.png");
+}
+
+.gros {
+  position: absolute;
+  top: 0;
+  right : 0;
+  z-index: 2;
 }
   
-.logovideo {
-  position:absolute;
-}
-
-#slider {
-  position: relative;
-  width: 100%;
-  height: 380px;
-  white-space: nowrap; /* défilement horizontal */
-}
-
-.slide {
-  position: relative;
-  width: 30%;
-  height: 380px;
-  display: inline-block; /* défilement horizontal */
-}
-
-
-.slide.showing {
-  display: block; /* montre le slide actif */
-}
-
-.caption {
-  position: relative; /* le texte suit l'image */
+.petit {
+  position: absolute;
   bottom: 0;
-  width: 40%;
-  height: 50px;
-  margin-right: 70px;
-  background: rgba(0, 0, 0, 0.4);
-  color: white;
-  padding: 10px;
-}
-
-#place {
-	background-image: url("foce-child/images_koukaki/Studio_Koukaki-image_place.png");
-  }
-
-.nuages {
+  left: 0;
   z-index: 2;
 }
 
-.grosnua {
-
+#place .nuages {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  box-sizing: border-box;
+  animation: move 5s linear infinite;
 }
 
-.petitnua {
-
+.nuages  {
+  width: 550px;
+  height: 240px;
 }
 
-.container {
-  position: relative;
-  overflow: hidden;
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-300px);
+  }
 }
 
-.move {
-  position: relative;
-  animation: moveLeft 2s linear infinite;
+/*menu*/
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 9999;
 }
 
-@keyframes moveLeft {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-300px); }
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+  justify-items: right;
+}
+
+@media screen and (min-width: 1440px) {
+	.menu-toggle {
+		display: none;
+	}
+ 
+	.main-navigation ul {
+		display: flex;
+		margin: 0;
+		padding-left: 0;
+	}
+	.main-navigation ul .site-title {
+    
+		display: block;
+	}
 }

@@ -1,0 +1,29 @@
+
+/*menu*/
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+}
+
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+  justify-items: right;
+}
+
+@media screen and (min-width: 1440px) {
+	.menu-toggle {
+		display: none;
+	}
+ 
+	.main-navigation ul {
+		display: flex;
+		margin: 0;
+		padding-left: 0;
+	}
+	.main-navigation ul .site-title {
+    
+		display: block;
+	}
+}

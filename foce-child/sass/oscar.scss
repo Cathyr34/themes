@@ -1,0 +1,61 @@
+
+/*oscar*/
+#oscar {
+    position: relative;
+  }
+  
+  .oscar {
+    /* 18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021 1 */
+    position: absolute;
+    width: 278px;
+    height: 129px;
+    left: 930px;
+    top: 3677px;
+    background: url(18-courts-metrages-francais-d-animation-eligibles-aux-oscars-2021.jpg);
+    mix-blend-mode: darken;
+  }
+  
+  #oscar > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 100px;
+  }
+  
+  .orange {
+    text-shadow: 0 0 80px #FF5C00, 0 0 80px #FF5C00;
+  }
+  
+  h3 {
+    background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/orange_characters_bg.png");
+  }
+  
+  @keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  
+  .site-footer::before, .site-footer::after, .site-footer ul::after {
+    animation: rotation 2s linear infinite;
+  }
+  
+  .site-footer::after {
+    top: 0em;
+    bottom: auto;
+  }
+  
+  .site-footer {
+    display: block;
+    padding-top: 0;
+    overflow: visible;
+  }
+  
+  .site-footer ul {
+    padding-top: 18em;
+  }
+  

@@ -1,0 +1,17 @@
+
+/*fade-in*/
+@keyframes apparition {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in-section {
+    animation-name : apparition;
+    animation-delay: 3s;
+    }
+  
+  
