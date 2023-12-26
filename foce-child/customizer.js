@@ -1,7 +1,7 @@
 
 
 /*Fade-in*/
-$(document).ready(function() {
+jQuery(document).ready(function($) {
     var controller = new ScrollMagic.Controller();
 
     // Sélectionner toutes les sections
@@ -42,16 +42,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-//slide
-var slider = document.querySelector('.slider');
-var scrollAmount = 0;
-function scrollSlider() {
-    scrollAmount += 320; // image + marge
-    if (scrollAmount > slider.scrollWidth - slider.clientWidth) {
-      scrollAmount = 0;
-    }
-    slider.scrollTo(scrollAmount, 0);
+  /*Menu*/
+  function showResponsiveMenu() {
+    var menu = document.getElementById("mesliens");
+    var icon = document.getElementById("site-navigation_hamburger_icon");
     
-    setTimeout(scrollSlider, 2000);
+    if (!menu.classList.contains("open")) { /*vérifie si la class open est présente*/
+      menu.classList.add("open");
+      icon.classList.add("open"); 
+    } 
+    else {
+      menu.classList.remove("open");
+      icon.classList.remove("open"); 
+    }
   }
-
+  

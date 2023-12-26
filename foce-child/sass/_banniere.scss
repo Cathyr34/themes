@@ -1,22 +1,23 @@
 
-/*bannière*/
+/*bannière*/ 
 .banner {
+    position: relative;
     background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
     min-height: 806px;
     background-size: cover;
   }
   
-  .source {
+  #myVideo.source {
+    position: absolute;
     width: 100%;
     height: 100%;
+    z-index: 1;
   }
-  
-  .banner.source {
-      margin-top: -10%;
-      width: 50%;
-  }
-  
+ 
   .logovideo {
     position: absolute;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
   }
-  
+

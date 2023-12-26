@@ -8,6 +8,27 @@
  Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
  Version: 0.1
  */
+/*bannière*/
+.banner {
+  position: relative;
+  background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
+  min-height: 806px;
+  background-size: cover;
+}
+
+#myVideo.source {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.logovideo {
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
 
 /*fade-in*/
 @keyframes apparition {
@@ -18,13 +39,247 @@
     opacity: 1;
   }
 }
-
 .fade-in-section {
-  animation-name : apparition;
-  animation-delay: 3s;
+  transition: 3s;
+}
+
+/*menu*/
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  height: 80px;
+  text-align: center;
+  /*menu fermé */
+}
+.site-header #mesliens {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 3s;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+  top: 45px;
+  left: 0;
+}
+.site-header #mesliens.open {
+  opacity: 1;
+  height: auto;
+  min-height: 100vh;
+  background-color: #FFF5E9;
+}
+.site-header #mesliens.open ul.nav-menu {
+  width: 500px;
+  position: absolute;
+  top: 40%;
+}
+.site-header #mesliens.open a {
+  color: #393939;
+  text-decoration: none;
+  font-size: 30px;
+}
+.site-header #mesliens.open a:hover {
+  text-shadow: 0 0 5px #FF5C00;
+}
+
+/* *** HAMBURGER ICON *** */
+#site-navigation_hamburger_icon {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 12px;
+  width: 33px;
+  height: 28px;
+  z-index: 100;
+  cursor: pointer;
+}
+#site-navigation_hamburger_icon span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  margin-bottom: 5px;
+  background: #171717;
+  border-radius: 3px;
+  z-index: 100;
+  opacity: 1;
+  left: 0;
+  transition: 0.25s ease-in-out;
+}
+#site-navigation_hamburger_icon span:nth-child(1) {
+  top: 0px;
+  transform-origin: left top;
+}
+#site-navigation_hamburger_icon span:nth-child(2) {
+  top: 12px;
+  transform-origin: left center;
+}
+#site-navigation_hamburger_icon span:nth-child(3) {
+  top: 24px;
+  transform-origin: left bottom;
+}
+#site-navigation_hamburger_icon.open span:nth-child(1) {
+  width: 110%;
+  transform: rotate(45deg) translate(0, -1px);
+}
+#site-navigation_hamburger_icon.open span:nth-child(2) {
+  width: 0;
+  opacity: 0;
+}
+#site-navigation_hamburger_icon.open span:nth-child(3) {
+  width: 110%;
+  transform: rotate(-45deg) translate(0, 1px);
+}
+
+/* *** Logo du menu *** */
+.page_menu {
+  position: absolute;
+  top: 100px;
+  width: 250px;
+  height: 155px;
+}
+
+/* Chats */
+@keyframes flottement {
+  0% {
+    transform: translateY(0px);
   }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+.Jaakuna {
+  animation: flottement 2s infinite ease-in-out;
+  position: absolute;
+  top: 450px;
+  right: 170px;
+  width: 150px;
+  height: 150px;
+}
 
+.Kawaneko {
+  animation: flottement 2s infinite ease-in-out;
+  position: absolute;
+  top: 200px;
+  left: 220px;
+  width: 150px;
+  height: 150px;
+}
 
+.Tenshi {
+  animation: flottement 2s infinite ease-in-out;
+  position: absolute;
+  top: 620px;
+  left: 90px;
+  width: 105px;
+  height: 105px;
+}
+
+/* Fleurs */
+.Sunflow {
+  animation: rotation 10s linear infinite;
+  position: absolute;
+  top: 100px;
+  right: 160px;
+  width: 215px;
+  height: 215px;
+}
+
+.flower {
+  animation: rotation 7s linear infinite;
+  position: absolute;
+  top: 475px;
+  left: 160px;
+  width: 70px;
+  height: 70px;
+}
+
+.random_flower {
+  animation: rotation 7s linear infinite;
+  position: absolute;
+  overflow: hidden;
+  top: 300px;
+  right: -35px;
+  width: 70px;
+  height: 70px;
+}
+
+.orchidee {
+  animation: rotation 7s linear infinite;
+  position: absolute;
+  overflow: hidden;
+  top: 130px;
+  left: -75px;
+  width: 170px;
+  height: 170px;
+}
+
+.Hibiscus {
+  animation: rotation 7s linear infinite;
+  position: absolute;
+  overflow: hidden;
+  top: 540px;
+  right: -350px;
+  width: 650px;
+  height: 650px;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+/*nuages*/
+#place {
+  position: relative;
+  background-image: url("images_koukaki/Studio_Koukaki-image_place.png");
+  height: 100%;
+  background-size: cover;
+}
+
+.gros {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.petit {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#place .nuages {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  box-sizing: border-box;
+  animation: move 5s linear infinite;
+}
+
+.nuages {
+  width: 550px;
+  height: 240px;
+}
+
+@keyframes move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-300px);
+  }
+}
 /*oscar*/
 #oscar {
   position: relative;
@@ -65,7 +320,6 @@ h3 {
     transform: rotate(359deg);
   }
 }
-
 .site-footer::before, .site-footer::after, .site-footer ul::after {
   animation: rotation 2s linear infinite;
 }
@@ -85,115 +339,19 @@ h3 {
   padding-top: 18em;
 }
 
-/*bannière*/
-.banner {
-  background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
-  min-height: 806px;
-  background-size: cover;
-}
-
-.source {
-  width: 100%;
-  height: 100%;
-}
-
-.banner.source {
-	margin-top: -10%;
-	width: 50%;
-}
-
-.logovideo {
-  position: absolute;
-}
-
 /*slider*/
-.slider {
-  display: flex;
-  max-width: 320px *3;
-}
-
-.slider .slide {
-  overflow: hidden; 
-  margin-right: 20px;
-}
-
-.slider img {
-  
-  width: 300px;
-  height: auto;
+.swiper-container {
+  width: 100%;
+  height: 500px;
 }
 
 .slider .caption {
   text-align: center;
 }
 
-/*nuages*/
-#place {
-  position: relative;
-  background-image: url("foce-child/images_koukaki/Studio_Koukaki-image_place.png");
+.swiper-slide {
+  height: 400px;
 }
-
-.gros {
-  position: absolute;
-  top: 0;
-  right : 0;
-  z-index: 2;
-}
-  
-.petit {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-}
-
-#place .nuages {
-  position: absolute;
-  top: 80px;
-  right: 0;
-  box-sizing: border-box;
-  animation: move 5s linear infinite;
-}
-
-.nuages  {
-  width: 550px;
-  height: 240px;
-}
-
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-300px);
-  }
-}
-
-/*menu*/
-.site-header {
-	position: sticky;
-	top: 0;
-	z-index: 9999;
-}
-
-.menu-toggle,
-.main-navigation.toggled ul {
-	display: block;
-  justify-items: right;
-}
-
-@media screen and (min-width: 1440px) {
-	.menu-toggle {
-		display: none;
-	}
- 
-	.main-navigation ul {
-		display: flex;
-		margin: 0;
-		padding-left: 0;
-	}
-	.main-navigation ul .site-title {
-    
-		display: block;
-	}
-}
+.swiper-slide img {
+  width: 100%;
+}/*# sourceMappingURL=style.css.map */
