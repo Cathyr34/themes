@@ -28,23 +28,22 @@ get_header();
             <article>
             <p><?php get_template_part( 'slider' ); ?></p>
             </article>
-        </section>
+        
 
-        <section>
-            <article id="place" class= "fade-in-section">
+            <div id="place" class="place fade-in-section">
                     
-                <div><h3>Le Lieu</h3>
+                <h3>Le Lieu</h3>
                     
-            
                         <p><?php echo get_theme_mod('place'); ?></p>
-                    </div>
+                    
                     <div class="nuages">
                         <img class="gros" src="wp-content/themes/foce-child/images_koukaki/big_cloud.png" alt= "gros nuage">
                         <img class="petit" src="wp-content/themes/foce-child/images_koukaki/little_cloud.png" alt= "petit nuage">
                     </div>
-            </article>     
+                
             
-        </section>
+            </div>
+        </section>  
 
         <section id="studio" class= "fade-in-section">
            

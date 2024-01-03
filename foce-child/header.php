@@ -37,7 +37,7 @@
                 <span class="line"></span>
             </button>
             
-            <div id="mesliens">
+            <div id="mesliens" class="responsive-menu">
             <img class="page_menu" src="wp-content/themes/foce-child/images_koukaki/logo.png" alt="logo">
 
 <img class="Jaakuna" src="wp-content/themes/foce-child/images_koukaki/Jaakuna-12.png" alt="Jaakuna-1">
@@ -49,6 +49,7 @@
 <img class="orchidee fleurs" src="wp-content/themes/foce-child/images_koukaki/orchidee.png" alt="orchidee">
 <img class="Hibiscus fleurs" src="wp-content/themes/foce-child/images_koukaki/Hibiscus.png" alt="Hibiscus">
 <img class="random_flower fleurs" src="wp-content/themes/foce-child/images_koukaki/random_flower.png" alt="random_flower">
+
                 <ul>
                     <li><a href="#story">Histoire</a></li>
                     <li><a href="#characters">Personnages</a></li>

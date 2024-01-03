@@ -2,7 +2,7 @@
 // Initialisez Swiper
 document.addEventListener('DOMContentLoaded', (event) => {
 var swiper = new Swiper('.swiper-container', {
-  effect: 'coverflow',
+  slide: 'coverflow',
   pagination: '.swiper-pagination',
   slidesPerView: 3, // Affiche 3 slides à la fois
   spaceBetween: 20, // Espace entre les slides

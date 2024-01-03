@@ -56,4 +56,6 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.classList.remove("open"); 
     }
   }
-  
+  $(".menu a").click( () => {
+    $("mesliens.responsive-menu").toggled("open");
+});

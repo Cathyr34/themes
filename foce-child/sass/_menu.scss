@@ -6,44 +6,45 @@
 	z-index: 9999;
 	height: 80px;
 	text-align: center;
+}
 
-/*menu fermé */	
-	#mesliens {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: opacity 3s;
-		height: 0;
-		width: 100%;
-		overflow: hidden;
-		top: 45px;
-		left: 0;
+	
+#mesliens {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: opacity 3s;
+	height: 0;
+	width: 100%;
+	overflow: hidden;
+	top: 45px;
+	left: 0;
+	
+	&.open {
+		opacity: 1;
+		min-height: 100vh;
+		background-color: #FFF5E9;	
+
+		ul{
+			width: 500px;
+			position: absolute;
+			top: 40%;
+		}
 		
-		&.open {
-			opacity: 1;
-			height: auto;
-			min-height: 100vh;
-			background-color: #FFF5E9;	
-
-			ul.nav-menu {
-				width: 500px;
-				position: absolute;
-    			top: 40%;
-			}
-			
-			a {
+		a {
 			color: #393939;
 			text-decoration: none;
 			font-size: 30px;
 			}
 
-			a:hover {
+		a:hover {
 				text-shadow: 0 0 5px #FF5C00;
 			}
-		}	
+			
+	}	
   	}
-}
+
 
 	/* *** HAMBURGER ICON *** */
 

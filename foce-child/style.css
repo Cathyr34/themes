@@ -50,9 +50,9 @@
   z-index: 9999;
   height: 80px;
   text-align: center;
-  /*menu fermé */
 }
-.site-header #mesliens {
+
+#mesliens {
   position: relative;
   display: flex;
   justify-content: center;
@@ -64,23 +64,22 @@
   top: 45px;
   left: 0;
 }
-.site-header #mesliens.open {
+#mesliens.open {
   opacity: 1;
-  height: auto;
   min-height: 100vh;
   background-color: #FFF5E9;
 }
-.site-header #mesliens.open ul.nav-menu {
+#mesliens.open ul {
   width: 500px;
   position: absolute;
   top: 40%;
 }
-.site-header #mesliens.open a {
+#mesliens.open a {
   color: #393939;
   text-decoration: none;
   font-size: 30px;
 }
-.site-header #mesliens.open a:hover {
+#mesliens.open a:hover {
   text-shadow: 0 0 5px #FF5C00;
 }
 
@@ -241,8 +240,20 @@
 #place {
   position: relative;
   background-image: url("images_koukaki/Studio_Koukaki-image_place.png");
-  height: 100%;
-  background-size: cover;
+  height: 700px;
+  margin-top: 140px;
+}
+
+.place h3 {
+  position: absolute;
+  margin-top: 140px;
+  width: 50%;
+}
+.place p {
+  position: absolute;
+  width: 50%;
+  margin-top: 350px;
+  margin-left: 60px;
 }
 
 .gros {
@@ -353,5 +364,6 @@ h3 {
   height: 400px;
 }
 .swiper-slide img {
+  height: 100%;
   width: 100%;
 }/*# sourceMappingURL=style.css.map */

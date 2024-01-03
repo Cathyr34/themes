@@ -3,10 +3,23 @@
 #place {
     position: relative;
     background-image: url("images_koukaki/Studio_Koukaki-image_place.png");
-    height: 100%;
-    background-size: cover;
-
+    height: 700px;
+    margin-top: 140px;
   }    
+
+.place {
+  h3 {
+    position: absolute;
+    margin-top: 140px;
+    width: 50%;
+  }
+  p {
+    position: absolute;
+    width: 50%;
+    margin-top: 350px;
+    margin-left: 60px;
+  }
+}
 
   .gros {
     position: absolute;

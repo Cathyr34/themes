@@ -1,19 +1,30 @@
+<?php
+            $args = array(
+                'post_type' => 'characters',
+                'posts_per_page' => -1,
+                'meta_key'  => '_main_char_field',
+                'orderby'   => 'meta_value_num',
 
+            );
+            $characters_query = new WP_Query($args);
+            ?>
 <div class="swiper-container fade-in-section">    
     <div class="swiper-wrapper">
-                   
-        <div class="swiper-slide"><img src="wp-content/themes/foce-child/images_koukaki/Kawaneko.png" alt="Kawaneko" class="caption">Kawaneko</div>
-                    
-        <div class="swiper-slide"><img src="wp-content/themes/foce-child/images_koukaki/Orenjiiro-1.png" alt="Orenjiiro-1" class="caption">Orenjiiro-1</div>
+    
+                    <?php
+                    while ( $characters_query->have_posts() ) {
+                        $characters_query->the_post();
                         
-        <div class="swiper-slide"><img src="wp-content/themes/foce-child/images_koukaki/Pinku-1.png" alt="Pinku-1" class="caption">Pinku-1</div>
-                    
-        <div class="swiper-slide"><img src="wp-content/themes/foce-child/images_koukaki/Tenshi-1.png" alt="Tenshi-1" class="caption">Tenshi-1</div>
-                        
-        <div class="swiper-slide"><img src="wp-content/themes/foce-child/images_koukaki/Jaakuna-1.png" alt="Jaakuna-1"class="caption">Jaakuna-1</div>
-                    
+                        echo '<div class="swiper-slide"><figure>';
+                        echo get_the_post_thumbnail( get_the_ID(), 'full' );
+                        echo '<figcaption>';
+                        the_title();
+                        echo'</figcaption>';
+                        echo '</figure></div>';
+                    }
+                    ?>
+        
         <div class="swiper-pagination"></div>  
     </div>
-                
-
+   
 </div>
