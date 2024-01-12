@@ -12,14 +12,16 @@
 .banner {
   position: relative;
   background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
-  min-height: 806px;
+  min-height: 80vh;
+  width: 100%;
+  height: 100%;
   background-size: cover;
 }
 
 #myVideo.source {
   position: absolute;
+  min-height: 80vh;
   width: 100%;
-  height: 100%;
   z-index: 1;
 }
 
@@ -30,8 +32,16 @@
   z-index: 2;
 }
 
+@media (max-width: 768px) {
+  
+  #myVideo.source,
+  .logovideo {
+    display: none;
+  }  
+}
+
 /*fade-in*/
-@keyframes apparition {
+@keyframes apparition1 {
   0% {
     opacity: 0;
   }
@@ -41,6 +51,23 @@
 }
 .fade-in-section {
   transition: 3s;
+}
+ 
+.apparition {
+  /* On rend le titre invisible par défaut */
+  opacity: 0;
+
+  /* On définit l'animation */
+  animation: apparition2 2s forwards;
+
+  /* On démarre l'animation après un délai de 2 secondes */
+  animation-delay: 2s;
+}
+
+@keyframes apparition2 {
+  to {
+    opacity: 1;
+  }
 }
 
 /*menu*/
@@ -70,6 +97,7 @@
   background-color: #FFF5E9;
 }
 #mesliens.open ul {
+  display: block;
   width: 500px;
   position: absolute;
   top: 40%;
@@ -179,6 +207,11 @@
   height: 105px;
 }
 
+.main-navigation .site-title {
+	animation: flottement 2s infinite ease-in-out;
+	}
+
+
 /* Fleurs */
 .Sunflow {
   animation: rotation 10s linear infinite;
@@ -275,7 +308,7 @@
   top: 80px;
   right: 0;
   box-sizing: border-box;
-  animation: move 5s linear infinite;
+ 
 }
 
 .nuages {
@@ -283,14 +316,6 @@
   height: 240px;
 }
 
-@keyframes move {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-300px);
-  }
-}
 /*oscar*/
 #oscar {
   position: relative;
@@ -364,6 +389,18 @@ h3 {
   height: 400px;
 }
 .swiper-slide img {
-  height: 100%;
-  width: 100%;
-}/*# sourceMappingURL=style.css.map */
+  height: 350px;
+  width :350px;
+}
+
+.swiper-slide figcaption {
+  display: block;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+
+}
+@media (max-width: 767.98px) {
+
+}

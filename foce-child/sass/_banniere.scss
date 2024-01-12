@@ -3,14 +3,16 @@
 .banner {
     position: relative;
     background-image: url("/Koukaki/wp-content/themes/foce-child/images_koukaki/banner.png");
-    min-height: 806px;
+    min-height: 80vh;
+    width: 100%;
+    height: 100%;
     background-size: cover;
   }
   
   #myVideo.source {
     position: absolute;
+    min-height: 80vh;
     width: 100%;
-    height: 100%;
     z-index: 1;
   }
  
@@ -21,3 +23,12 @@
     z-index: 2;
   }
 
+
+  @media (max-width: 768px) {
+ 
+    #myVideo.source,
+    .logovideo {
+      display: none;
+    }  
+  }
+  

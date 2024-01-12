@@ -11,4 +11,20 @@
 .fade-in-section {
   transition: 3s;
 }
+ 
+.apparition {
+  /* On rend le titre invisible par défaut */
+  opacity: 0;
 
+  /* On définit l'animation */
+  animation: apparition2 2s forwards;
+
+  /* On démarre l'animation après un délai de 2 secondes */
+  animation-delay: 2s;
+}
+
+@keyframes apparition2 {
+  to {
+    opacity: 1;
+  }
+}

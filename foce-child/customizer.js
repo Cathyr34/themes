@@ -17,9 +17,10 @@ jQuery(document).ready(function($) {
         .addTo(controller);  // Ajouter la scène au contrôleur
     });
 });
-
+var titles = document.querySelectorAll('h2 span, h3 span');
+var sections = document.querySelectorAll('.fade-in-section');
 window.addEventListener('scroll', function() {
-    var sections = document.querySelectorAll('.fade-in-section');
+   
     sections.forEach(function(section) {
         var sectionTop = section.getBoundingClientRect().top;
         var screenPosition = window.innerHeight / 1.3;
@@ -29,6 +30,15 @@ window.addEventListener('scroll', function() {
             section.style.opacity = '0';
         }
     });
+    titles.forEach(function(title) {
+      var titleTop = title.getBoundingClientRect().top;
+      var screenPosition = window.innerHeight / 1.3;
+      if(titleTop < screenPosition) {
+        title.className = 'apparition';
+      } else {
+        title.className = '';
+      }
+  });
 });
 
 
@@ -43,10 +53,13 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
   /*Menu*/
+
+ const menu = document.getElementById("mesliens");
+    const icon = document.getElementById("site-navigation_hamburger_icon");
+
   function showResponsiveMenu() {
-    var menu = document.getElementById("mesliens");
-    var icon = document.getElementById("site-navigation_hamburger_icon");
-    
+   
+
     if (!menu.classList.contains("open")) { /*vérifie si la class open est présente*/
       menu.classList.add("open");
       icon.classList.add("open"); 
@@ -56,6 +69,21 @@ document.addEventListener('DOMContentLoaded', function() {
       icon.classList.remove("open"); 
     }
   }
-  $(".menu a").click( () => {
-    $("mesliens.responsive-menu").toggled("open");
+
+  var menuLinks = document.querySelectorAll('.responsive-menu a');
+
+// Parcourez chaque lien
+for (var i = 0; i < menuLinks.length; i++) {
+    // Ajoutez un écouteur d'événements pour le clic
+    menuLinks[i].addEventListener('click', function(event) {
+      showResponsiveMenu()
+
+});
+}
+
+// Déplacement des nuages au scroll
+window.addEventListener('scroll', function() {
+  var scrollPosition = window.scrollY;
+  var nuagesElement = document.querySelector('.nuages');
+  nuagesElement.style.transform = 'translateX(' + (-300 + scrollPosition) + 'px)';
 });

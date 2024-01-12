@@ -27,6 +27,7 @@
 		background-color: #FFF5E9;	
 
 		ul{
+			display: block;
 			width: 500px;
 			position: absolute;
 			top: 40%;
@@ -145,6 +146,11 @@
 	left: 90px;
 	width: 105px;
 	height: 105px;
+}
+
+
+.main-navigation .site-title {
+	animation: flottement 2s infinite ease-in-out;
 }
 
 /* Fleurs */

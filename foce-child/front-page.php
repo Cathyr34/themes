@@ -16,14 +16,14 @@ get_header();
         <section class="story  fade-in-section" id="b1">
                   
             <article id="story" class="story__article">
-                <h2 id="b2">L'histoire</h2>    
+                <h2 id="b2"><span>L'histoire</span></h2>    
                 <p><?php echo get_theme_mod('story'); ?></p>
             </article>        
         </section>
         
         <section  class= "fade-in-section">
             <div id="characters">
-                <h3>Les personnages</h3>
+                <h3><span>Les personnages</span></h3>
             </div>
             <article>
             <p><?php get_template_part( 'slider' ); ?></p>
@@ -32,7 +32,7 @@ get_header();
 
             <div id="place" class="place fade-in-section">
                     
-                <h3>Le Lieu</h3>
+                <h3><span>Le Lieu</span></h3>
                     
                         <p><?php echo get_theme_mod('place'); ?></p>
                     
@@ -48,7 +48,7 @@ get_header();
         <section id="studio" class= "fade-in-section">
            
             <div> 
-                <h2>Studio Koukaki</h2>
+                <h2><span>Studio Koukaki</span></h2>
             </div>
             <div>
                 <p>Acteur majeur de l’animation, Koukaki est un studio intégré fondé en 2012 qui créé, produit et distribue des programmes originaux dans plus de 190 pays pour les enfants et les adultes. Nous avons deux sections en activité : le long métrage et le court métrage. Nous développons des films fantastiques, principalement autour de la culture de notre pays natal, le Japon.</p>
